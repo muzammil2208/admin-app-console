@@ -1,16 +1,24 @@
 import axios from "axios";
-import Layout from "../../components/Layout"
-import {useState} from 'react'
+import Layout from "../../components/Layout";
+import {useState} from 'react';
+import {useRouter} from 'next/router';
 export default function New()
 {
+    const router=useRouter();
     const [title,setTtitle]=useState('');
     const [description,setDescription]=useState('')
     const [price,setPrice]=useState('');
+    const [isEmptyFlag,setisEmptyFlag]=useState(false);
     async function createProduct(ev)
     {
         ev.preventDefault();
         const data={title,description,price};
         await axios.post('/api/Products',data);
+        setisEmptyFlag(true);
+    }
+    if(isEmptyFlag)
+    {
+        router.push('/Products');
     }
     return(
     <Layout>

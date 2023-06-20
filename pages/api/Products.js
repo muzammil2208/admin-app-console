@@ -1,5 +1,5 @@
 import mongooseConnect from "@/lib/mongoose";
-import { Products } from "@/models/products";
+import { Products } from "@/models/Products";
 
 
 
@@ -20,11 +20,11 @@ export default async function handler(req, res)
       })
       res.json(productDoc);
    }
-   else
+   if(method==='GET')
    {
-      res.json(req.method);
+      res.json(await Products.find());
    }
-
+   
     
 
 }

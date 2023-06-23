@@ -22,3 +22,19 @@ textarea
 {
     @apply border-2 border-blue-900 rounded-md px-4 py-2
 }
+table.products_table tr td
+{
+    @apply border-2 border-blue-200
+}
+thead
+{
+    @apply bg-blue-400
+}
+td button
+{
+    @apply bg-blue-900 rounded-lg text-white flex p-1
+}
+td
+{
+    @apply p-1
+}

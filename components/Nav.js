@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-
+import {motion} from 'framer-motion';
 export default function Nav()
 {
     const router=useRouter();
@@ -9,6 +9,7 @@ export default function Nav()
     const activeLink=inactiveLink+' bg-white text-blue-900 p-2 rounded-l-xl';
     return(
             <aside className="text-white pl-4 flex flex-col gap-4">
+                
                 <Link href={'/'} className="flex gap-2 text-xl mr-4 mt-4">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0012 9.75c-2.551 0-5.056.2-7.5.582V21M3 21h18M12 6.75h.008v.008H12V6.75z" />
